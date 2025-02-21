@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'echo "Build step here"' // Placeholder for build command
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                sh 'echo "Test step here"' // Placeholder for test command
+            }
+        }
+        stage('Memory Info') {
+            steps {
+                echo 'Gathering Memory Usage...'
+                sh 'free -h' // Command to display memory usage
+            }
+        }
+        stage('Disk Info') {
+            steps {
+                echo 'Gathering Disk Usage...'
+                sh 'df -h' // Command to display disk usage
+            }
+        }
+        stage('CPU Info') {
+            steps {
+                echo 'Gathering CPU Usage...'
+                sh 'top -bn1 | grep "Cpu(s)" | awk \'{print $2 + $4}\' | awk -F "." \'{print $1}\'' // Command to display CPU usage
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                sh 'echo "Deploy step here"' // Placeholder for deploy command
+            }
+        }
+    }
+}
