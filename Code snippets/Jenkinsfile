@@ -32,11 +32,6 @@ pipeline {
                 sh 'top -bn1 | grep "Cpu(s)" | awk \'{print $2 + $4}\' | awk -F "." \'{print $1}\'' // Command to display CPU usage
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                sh 'echo "Deploy step here"' // Placeholder for deploy command
-            }
-        }
+ 
     }
 }
