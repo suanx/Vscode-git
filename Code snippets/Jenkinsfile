@@ -1,28 +1,27 @@
-//basic syntax for Jenkinsfile
 pipeline {
     agent any
-    environment{
+    environment {
         CREDS = credentials('gitconnect')
     }
-    stages{
-      stage('build'){
-            steps{
+    stages {
+        stage('build') {
+            steps {
                 echo 'building the application'
             }
         } 
-        stage('test'){
-            steps{
+        stage('test') {
+            steps {
                 echo 'testing application'
             }
         }
-        stage('deploy'){
-            steps{
-               echo 'deploying application' 
+        stage('deploy') {
+            steps {
+                echo 'deploying application' 
             }
         }
-        stage('path added'){
-            steps{
-               echo 'path adding'
+        stage('path added') {
+            steps {
+                echo 'path adding'
                 echo "deploying with ${CREDS}"
             }
         }
