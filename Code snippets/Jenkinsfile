@@ -8,7 +8,6 @@ pipeline {
       stage('build'){
             steps{
                 echo 'building the application'
-                echo "note my credential ${USRN} ${PASWD}"
             }
         } 
         stage('test'){
