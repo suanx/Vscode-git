@@ -2,8 +2,7 @@
 pipeline {
     agent any
     environment{
-        USRN = 'admin'
-        PASWD = 'password'
+        CREDS = Credentials('gitconnect')
     }
     stages{
       stage('build'){
@@ -24,7 +23,8 @@ pipeline {
         }
         stage('path added'){
             steps{
-               echo 'path adding' 
+               echo 'path adding'
+                echo "deploying with ${CREDS}"
             }
         }
     }
