@@ -18,11 +18,6 @@ pipeline {
             }
         }
         stage('path added'){
-            when{
-                expression{
-                    BRANCH_NAME == 'dev'
-                }
-            }
             steps{
                echo 'path adding' 
             }
