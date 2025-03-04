@@ -2,14 +2,14 @@
 pipeline {
     agent any
     environment{
-        Username = 'admin'
-        password = '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'
+        USRN = 'admin'
+        PASWD = 'password'
     }
     stages{
       stage('build'){
             steps{
                 echo 'building the application'
-                echo "note my credential ${Username} ${password}"
+                echo "note my credential ${USRN} ${PASWD}"
             }
         } 
         stage('test'){
