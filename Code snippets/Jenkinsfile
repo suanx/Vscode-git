@@ -23,4 +23,12 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            sh 'date'
+        }
+        succed{
+            sh 'uptime'
+        }
+    }
 }
