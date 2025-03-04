@@ -2,7 +2,7 @@
 pipeline {
     agent any
     environment{
-        CREDS = Credentials('gitconnect')
+        CREDS = credentials('gitconnect')
     }
     stages{
       stage('build'){
