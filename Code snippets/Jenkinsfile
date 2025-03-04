@@ -30,5 +30,8 @@ pipeline {
         success{
             sh 'uptime'
         }
+        failure{
+            sh 'ls -a'
     }
+}
 }
