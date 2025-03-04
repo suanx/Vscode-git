@@ -27,7 +27,7 @@ pipeline {
         always{
             sh 'date'
         }
-        succeed{
+        success{
             sh 'uptime'
         }
     }
