@@ -1,10 +1,15 @@
 //basic syntax for Jenkinsfile
 pipeline {
     agent any
+    environment{
+        Username = 'admin'
+        password = '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'
+    }
     stages{
       stage('build'){
             steps{
                 echo 'building the application'
+                echo "note my credential ${Username} ${password}"
             }
         } 
         stage('test'){
