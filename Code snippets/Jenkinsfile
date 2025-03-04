@@ -17,5 +17,10 @@ pipeline {
                echo 'deploying application' 
             }
         }
+        stage('path added'){
+            steps{
+               echo 'path adding' 
+            }
+        }
     }
 }
