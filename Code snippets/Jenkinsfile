@@ -8,11 +8,6 @@ pipeline {
 
     stages {
         stage('build') {
-            when {
-                expression {
-                    params.default
-                }
-            }
             steps {
                 echo "Building project"
                 // Add your build steps here
