@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'VERSION', choices: ['1.1.1', '1.2.3'], description: 'Select the version to deploy')
-        booleanParam(name: 'executingTasks', defaultValue: true, description: 'Enable or disable executing tasks')
+        choice(name: 'VERSION', choices: ['1.1.1', '1.2.3'])
+        booleanParam(name: 'default', defaultValue: true)
     }
 
     stages {
         stage('build') {
             when {
                 expression {
-                    params.executingTasks
+                    params.default
                 }
             }
             steps {
