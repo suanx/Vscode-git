@@ -23,6 +23,7 @@ pipeline {
             steps {
                 echo 'path adding'
                 echo "deploying with ${CREDS}"
+                echo 'use the crediatial as mentioned above'
             }
         }
     }
