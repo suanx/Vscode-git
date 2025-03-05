@@ -1,29 +1,30 @@
+//basic syntax for Jenkinsfile
 pipeline {
     agent any
-    environment {
-        CREDS = credentials('gitconnect')
+    parameters{
+        choice(name: 'VERSION',choice['1.1.1'],['1.2.3'], description'')
+        booleanParam(name:'executeing tasks', defaultValue: true , description:'')
     }
-    stages {
-        stage('build') {
-            steps {
-                echo 'building the application'
+    stages{
+      stage('build'){
+        when{
+            expression{
+                Params.executeing tasks
+            }
+        }
+            steps{
+                
             }
         } 
-        stage('test') {
-            steps {
-                echo 'testing application'
+        stage('test'){
+            steps{
+                
             }
         }
-        stage('deploy') {
-            steps {
-                echo 'deploying application' 
-            }
-        }
-        stage('path added') {
-            steps {
-                echo 'path adding'
-                echo "deploying with ${CREDS}"
-                echo 'use the crediatial as mentioned above'
+        stage('deploy'){
+            steps{
+                echo "deploying ${Params.VERSION}"
+                
             }
         }
     }
